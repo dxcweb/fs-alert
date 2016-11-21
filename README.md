@@ -1,2 +1,15 @@
 # fs-alert
-react版本alert函数,通过alert.show()和alert.hide()来控制alert的显示和隐藏
+react版本aler函数,直接调用aler(title, content, button)显示
+## install
+
+```
+npm install fs-alert --save
+```
+## Development
+
+```
+npm install
+npm start
+```
+## Example
+[http://github.dxcweb.com/fs-alert/](http://github.dxcweb.com/fs-alert/ "http://github.dxcweb.com/fs-alert/")

@@ -69,7 +69,7 @@ export default class Alert extends Component {
             className = 'zoomIn';
         }
         return (
-            <Overlay open={this.state.open} onClose={this.close.bind(this)}>
+            <Overlay open={this.state.open} onClose={()=>{}}>
                 <Block style={style} j="c" a="c" className={className}>
                     <Block w={270*ratio} bc="#fff" s={{borderRadius:7*ratio}} pt={15*ratio}>
                         <Block j="c" fs={18*ratio} ml={15*ratio} mr={15*ratio} mb={15*ratio}>{title}</Block>

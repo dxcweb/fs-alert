@@ -1,6 +1,6 @@
 {
   "name": "fs-alert",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "react版本aler函数,直接调用aler(title, content, button)显示",
   "keywords": [
     "react-alert",

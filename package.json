@@ -1,6 +1,6 @@
 {
   "name": "fs-alert",
-  "version": "0.0.2",
+  "version": "0.0.7",
   "description": "react版本aler函数,直接调用aler(title, content, button)显示",
   "keywords": [
     "react-alert",
@@ -30,8 +30,8 @@
     "react-dom": "^15.2.1"
   },
   "dependencies": {
-    "fs-overlay": "^0.0.5",
-    "react-speed": "^0.0.8"
+    "fs-flex": "0.0.1",
+    "fs-overlay": "0.0.6"
   },
   "files": [
     "assets",

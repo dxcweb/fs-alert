@@ -3,8 +3,8 @@
  */
 import React, {Component, PropTypes} from 'react';
 import Overlay from 'fs-overlay'
-import {Block} from 'react-speed'
-import './alert.less';
+import Block from 'fs-flex'
+import '../../assets/alert.less';
 export default class Alert extends Component {
     static defaultProps = {
         afterClose: ()=> {

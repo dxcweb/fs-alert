@@ -1,2 +1,2 @@
-import alert from './alert'
+import alert from './native/alert'
 export default alert;

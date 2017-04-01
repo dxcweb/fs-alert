@@ -9,15 +9,12 @@ class Simple extends Component {
         const me = this;
         alert('Alert', 'I have a Alert', [
             {
-                text: "You don't have",
-                onClick: (alert)=> {
-                    alert.close();
-                }
+                text: "You don't have"
             },
             {
                 text: 'you have',
                 onClick: ()=> {
-                    me.show1();
+                    console.log('ok')
                 }
             }
         ]);
@@ -26,23 +23,14 @@ class Simple extends Component {
         const me = this;
         alert('Alert', 'I have a Alert', [
             {
-                text: "1",
-                onClick: (alert)=> {
-                    alert.close();
-                }
+                text: "1"
             },
             {
-                text: "2",
-                onClick: (alert)=> {
-                    alert.close();
-                }
+                text: "2"
             },  {
-                text: "3",
-                onClick: (alert)=> {
-                    alert.close();
-                }
+                text: "3"
             }
-        ],{ratio:1});
+        ]);
     }
 
     render() {

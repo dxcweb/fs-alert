@@ -9,8 +9,7 @@ export default class Alert extends Component {
     static defaultProps = {
         afterClose: ()=> {
 
-        },
-        ratio: 1
+        }
     };
     state = {
         open: true
@@ -24,28 +23,32 @@ export default class Alert extends Component {
         }, 350)
     }
 
+    onClickClose(onClick) {
+        this.close();
+        if (typeof onClick == "function") {
+            onClick();
+        }
+    }
+
     button() {
-        const {button, ratio} =this.props;
-        const me = this;
+        const {button} =this.props;
         if (button == null) {
-            return <Block h={15*ratio}/>;
+            return <Block h={15}/>;
         } else {
-            return <Block hf h={42*ratio} s={{borderTop:"1px solid #ddd"}}>
+            return <Block hf h={42} bdt>
                 {
                     button.map((item, i)=> {
-                        const {
-                            text, onClick=()=> {
-                        }
-                        }=item;
+                        const {text, onClick}=item;
                         const style = {
-                            cursor:"pointer"
+                            cursor: "pointer"
                         };
+                        let bdl = false;
                         if (i != 0) {
-                            style.borderLeft = "1px solid #ddd";
+                            bdl = true;
                         }
-                        return <Block fc="#108ee9" fs={16*ratio} f="1" key={i} onClick={()=>{onClick(me)}
-                        } j="c" a="c"
-                                      style={style}
+                        return <Block fc="#108ee9" fs={16} f="1" key={i}
+                                      onClick={this.onClickClose.bind(this,onClick)}
+                                      j="c" a="c" bdl={bdl}
                         >{text}</Block>
                     })
                 }
@@ -65,7 +68,7 @@ export default class Alert extends Component {
             // transition: "0.3s ease-out",
             // backgroundColor: "rgba(0, 0, 0, 0.3)"
         };
-        const {title, content, ratio} =this.props;
+        const {title, content} =this.props;
         let className = 'zoomOut';
         if (this.state.open) {
             className = 'zoomIn';
@@ -73,9 +76,9 @@ export default class Alert extends Component {
         return (
             <Overlay open={this.state.open} onClose={()=>{}}>
                 <Block style={style} j="c" a="c" className={className}>
-                    <Block w={270*ratio} bc="#fff" s={{borderRadius:7*ratio}} pt={15*ratio}>
-                        <Block j="c" fs={18*ratio} ml={15*ratio} mr={15*ratio} mb={15*ratio}>{title}</Block>
-                        <Block j="c" ml={15*ratio} mr={15*ratio} mb={15*ratio} fs={14*ratio}>{content}</Block>
+                    <Block w={270} bc="#fff" br={7} pt={15}>
+                        <Block j="c" fs={18} ml={15} mr={15} mb={15}>{title}</Block>
+                        <Block j="c" ml={15} mr={15} mb={15} fs={14}>{content}</Block>
                         {this.button()}
                     </Block>
                 </Block>

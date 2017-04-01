@@ -1,6 +1,6 @@
 {
   "name": "fs-alert",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "react版本aler函数,直接调用aler(title, content, button)显示",
   "keywords": [
     "react-alert",
@@ -25,12 +25,12 @@
     "up": "rc-tools run update-self"
   },
   "devDependencies": {
-    "rc-tools": "^5.9.3",
-    "react": "^15.2.1",
-    "react-dom": "^15.2.1"
+    "rc-tools": "^5.11.4",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2"
   },
   "dependencies": {
-    "fs-flex": "^0.0.3",
+    "fs-flex": "^0.1.1",
     "fs-overlay": "^0.0.7"
   },
   "files": [

@@ -35,7 +35,7 @@ export default class Alert extends Component {
         if (button == null) {
             return <Block h={15}/>;
         } else {
-            return <Block hf h={42} bdt>
+            return <Block hf h={42} bdt s={{cursor:"pointer"}}>
                 {
                     button.map((item, i)=> {
                         const {text, onClick}=item;
@@ -58,7 +58,7 @@ export default class Alert extends Component {
 
     render() {
         const style = {
-            zIndex: 999,
+            zIndex: 2000,
             position: 'fixed',
             top: 0,
             left: 0,

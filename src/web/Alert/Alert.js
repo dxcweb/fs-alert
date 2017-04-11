@@ -58,7 +58,7 @@ export default class Alert extends Component {
 
     render() {
         const style = {
-            zIndex: 2000,
+            zIndex: 1000,
             position: 'fixed',
             top: 0,
             left: 0,

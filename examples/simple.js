@@ -7,7 +7,7 @@ import alert from 'fs-alert';
 class Simple extends Component {
     show1() {
         const me = this;
-        alert('Alert', 'I have a Alert', [
+        alert('Alert', <div>123123</div>, [
             {
                 text: "You don't have"
             },

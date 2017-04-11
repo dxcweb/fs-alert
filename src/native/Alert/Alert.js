@@ -91,11 +91,14 @@ export default class Alert extends Component {
         return <Overlay open={open}>
             <Block f={1} a="c" j="c">
                 <AnBlock w={270} bc="#fff" style={style} pt={15}>
-                    {title?<Block s={{textAlign:"center"}} el={Text} fs={18} ml={15} mr={15}
-                                  mb={15}>{title}</Block>:
+                    {title ? <Block s={{textAlign:"center"}} el={Text} fs={18} ml={15} mr={15}
+                                    mb={15}>{title}</Block> :
                         <Block h={15}/>
                     }
-                    <Block s={{textAlign:"center"}} el={Text} ml={15} mr={15} mb={15} fs={14}>{content}</Block>
+                    {typeof content == 'string' ?
+                        <Block s={{textAlign:"center"}} el={Text} ml={15} mr={15} mb={15} fs={14}>{content}</Block> :
+                        <Block ml={15} mr={15} mb={15}>{content}</Block>
+                    }
                     {this.button()}
                 </AnBlock>
             </Block>

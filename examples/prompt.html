@@ -2,7 +2,7 @@
 <html>
 
 <head>
-  <title>simple.js - example - fs-alert@0.3.0</title>
+  <title>prompt.js - example - fs-alert@0.3.0</title>
   <meta name="viewport"
         content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no">
   <meta charset="utf-8"/>
@@ -272,51 +272,35 @@ Monokai Sublime style. Derived from Monokai by noformnocontent http://nn.mit-lic
     <div class="highlight"><pre><code language="js"><span class="hljs-comment">/**
  * Created by dxc on 2016/11/18.
  */</span>
-<span class="hljs-keyword">import</span> React, { Component, PropTypes } <span class="hljs-keyword">from</span> <span class="hljs-string">'react'</span>;
-<span class="hljs-keyword">import</span> ReactDOM <span class="hljs-keyword">from</span> <span class="hljs-string">'react-dom'</span>;
-<span class="hljs-keyword">import</span> alert <span class="hljs-keyword">from</span> <span class="hljs-string">'fs-alert'</span>;
+<span class="hljs-keyword">import</span> React, { Component, PropTypes } <span class="hljs-keyword">from</span> <span class="hljs-string">"react"</span>;
+<span class="hljs-keyword">import</span> ReactDOM <span class="hljs-keyword">from</span> <span class="hljs-string">"react-dom"</span>;
+<span class="hljs-keyword">import</span> { prompt } <span class="hljs-keyword">from</span> <span class="hljs-string">"fs-alert"</span>;
 <span class="hljs-class"><span class="hljs-keyword">class</span> <span class="hljs-title">Simple</span> <span class="hljs-keyword">extends</span> <span class="hljs-title">Component</span> </span>{
   show1() {
-    alert(<span class="hljs-string">'Alert'</span>, <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span>&gt;</span>123123<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>, [
+    prompt(<span class="hljs-string">"输入123关闭"</span>, [
       {
-        text: "You don't have",
+        text: <span class="hljs-string">"关闭"</span>
       },
       {
-        text: 'you have',
-        onClick: () =&gt; {
-          console.log('ok');
-        },
-      },
+        text: <span class="hljs-string">"确定"</span>,
+        onClick: (value, close) =&gt; {
+          <span class="hljs-keyword">if</span> (value == <span class="hljs-string">"123"</span>) {
+            close();
+          }
+        }
+      }
     ]);
-  }
-  show2() {
-    alert('Alert', 'I have a Alert', [
-      {
-        text: '1',
-      },
-      {
-        text: '2',
-      },
-      {
-        text: '3',
-      },
-    ]);
-  }
-  show3() {
-    alert('I have a Alert');
   }
 
   render() {
-    return (
-      <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">height:</span> <span class="hljs-attribute">300</span>, <span class="hljs-attribute">padding:</span> <span class="hljs-attribute">20</span> }}&gt;</span>
+    <span class="hljs-keyword">return</span> (
+      <span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">style</span>=<span class="hljs-value">{{</span> <span class="hljs-attribute">height:</span> <span class="hljs-attribute">300</span>, <span class="hljs-attribute">padding:</span> <span class="hljs-attribute">20</span> }}&gt;</span>
         <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.show1.bind(this,</span> <span class="hljs-attribute">true</span>)}&gt;</span>点击显示<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.show2.bind(this,</span> <span class="hljs-attribute">true</span>)}&gt;</span>多个按钮<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
-        <span class="hljs-tag">&lt;<span class="hljs-title">div</span> <span class="hljs-attribute">onClick</span>=<span class="hljs-value">{this.show3.bind(this,</span> <span class="hljs-attribute">true</span>)}&gt;</span>简写<span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
       <span class="hljs-tag">&lt;/<span class="hljs-title">div</span>&gt;</span>
     )</span>;
   }
 }
-ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Simple</span> /&gt;</span>, document.getElementById('__react-content'));
+ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-title">Simple</span> /&gt;</span>, document.getElementById("__react-content"));
 </span></code></pre></div>
   </div>
   <a href="https://github.com/dxcweb/fs-alert">
@@ -327,7 +311,7 @@ ReactDOM.render(<span class="xml"><span class="hljs-tag">&lt;<span class="hljs-t
   </a>
   <script>FastClick.attach(document.body);</script>
   <script src="common.js?nowrap"></script>
-  <script src="simple.js?nowrap"></script>
+  <script src="prompt.js?nowrap"></script>
 </body>
 
 </html>

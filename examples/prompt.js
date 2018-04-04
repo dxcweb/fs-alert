@@ -1,17 +1,15 @@
-webpackJsonp([1],{
-
-/***/ 0:
+webpackJsonp([0],[
+/* 0 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	module.exports = __webpack_require__(332);
+	module.exports = __webpack_require__(1);
 
 
 /***/ }),
-
-/***/ 332:
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-	'use strict';
+	"use strict";
 	
 	var _react = __webpack_require__(2);
 	
@@ -22,8 +20,6 @@ webpackJsonp([1],{
 	var _reactDom2 = _interopRequireDefault(_reactDom);
 	
 	var _fsAlert = __webpack_require__(185);
-	
-	var _fsAlert2 = _interopRequireDefault(_fsAlert);
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
@@ -48,52 +44,26 @@ webpackJsonp([1],{
 	  }
 	
 	  Simple.prototype.show1 = function show1() {
-	    (0, _fsAlert2.default)('Alert', _react2.default.createElement(
-	      'div',
-	      null,
-	      '123123'
-	    ), [{
-	      text: "You don't have"
+	    (0, _fsAlert.prompt)("输入123关闭", [{
+	      text: "关闭"
 	    }, {
-	      text: 'you have',
-	      onClick: function onClick() {
-	        console.log('ok');
+	      text: "确定",
+	      onClick: function onClick(value, close) {
+	        if (value == "123") {
+	          close();
+	        }
 	      }
 	    }]);
 	  };
 	
-	  Simple.prototype.show2 = function show2() {
-	    (0, _fsAlert2.default)('Alert', 'I have a Alert', [{
-	      text: '1'
-	    }, {
-	      text: '2'
-	    }, {
-	      text: '3'
-	    }]);
-	  };
-	
-	  Simple.prototype.show3 = function show3() {
-	    (0, _fsAlert2.default)('I have a Alert');
-	  };
-	
 	  Simple.prototype.render = function render() {
 	    return _react2.default.createElement(
-	      'div',
+	      "div",
 	      { style: { height: 300, padding: 20 } },
 	      _react2.default.createElement(
-	        'div',
+	        "div",
 	        { onClick: this.show1.bind(this, true) },
-	        '\u70B9\u51FB\u663E\u793A'
-	      ),
-	      _react2.default.createElement(
-	        'div',
-	        { onClick: this.show2.bind(this, true) },
-	        '\u591A\u4E2A\u6309\u94AE'
-	      ),
-	      _react2.default.createElement(
-	        'div',
-	        { onClick: this.show3.bind(this, true) },
-	        '\u7B80\u5199'
+	        "\u70B9\u51FB\u663E\u793A"
 	      )
 	    );
 	  };
@@ -101,9 +71,8 @@ webpackJsonp([1],{
 	  return Simple;
 	}(_react.Component);
 	
-	_reactDom2.default.render(_react2.default.createElement(Simple, null), document.getElementById('__react-content'));
+	_reactDom2.default.render(_react2.default.createElement(Simple, null), document.getElementById("__react-content"));
 
 /***/ })
-
-});
-//# sourceMappingURL=simple.js.map
+]);
+//# sourceMappingURL=prompt.js.map
